@@ -16,7 +16,6 @@ software:
 
 ## Built With
 - C - The programming language used
-## Contributing
 
 ## Authors
 - [Gilbert Adikankwu](https://github.com/functionguyy)
