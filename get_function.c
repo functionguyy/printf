@@ -23,7 +23,7 @@ int (*find_format_handlers(const char *format))(va_list arg)
 
 	while (find_func[i].format_char)
 	{
-		if (format[i] == find_func[i].format_char[0])
+		if (format[0] == find_func[i].format_char[0])
 		return (find_func[i].handler_func);
 		i++;
 	}
