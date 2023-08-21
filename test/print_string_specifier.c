@@ -1,24 +1,33 @@
 #include "main.h"
 /**
- * print_spec_c_match - function prints the variadic character specified for
- * the fornat specifier c
+ * print_spec_s_match - function that prints the variadic argument specified
+ * for the format specifier s
  * @arg: variadic argument
  *
- * Return: returns the number of character print to standard output
+ * Return: returns the number of characters printed to standard output
  */
-int print_spec_c_match(va_list arg)
+int print_spec_s_match(va_list arg)
 {
-	int i, r_value = 0;
-    char *strn;
+	/* declare variables */
+	unsigned int idx;
+	int r_value;
+	char *strn;
 
-    strn = va_arg(arg, char*);
-    if (strn == NULL)
-        strn = EMPTY_STRING;
+	/* initialize variable */
+	strn = va_arg(arg, char *);
+	r_value = 0;
+	idx = 0;
 
-    for (i = 0; strn[i]; i++, r_value++)
-    {
-        _putchar(strn[i]);
-    }
-    return r_value;
+	/* check for null */
+	if (strn == NULL)
+		strn = EMPTY_STRING;
 
+	/* print string */
+	while (strn[idx] != '\0')
+	{
+		r_value += _putchar(strn[idx]);
+		idx++;
+	}
+
+	return (r_value);
 }
