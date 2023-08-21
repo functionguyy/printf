@@ -6,7 +6,7 @@
  *
  * Return: returns the number of character print to standard output
  */
-int print_spec_c_match(va_list arg)
+int print_spec_s_match(va_list arg)
 {
 	int i, r_value = 0;
     char *strn;

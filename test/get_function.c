@@ -18,7 +18,7 @@ int (*find_format_handlers(const char *format))(va_list arg)
 		{"c", print_spec_c_match},
 		{"d", print_spec_d_match},
 		{"i", print_spec_d_match},
-		{"s", print_spec_c_match}
+		{"s", print_spec_s_match}
 	};
 
 	while (find_func[i].format_char)
