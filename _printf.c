@@ -41,8 +41,9 @@ int produce_range(char *start, char *stop)
   */
 int _printf(const char *format, ...)
 {
-	unsigned int r_value = 0;
+	unsigned int i, r_value = 0;
 	char *ptr = (char *)format, *specifier_start;
+	int (*format_char)(va_list arg);
 	va_list args;
 
 	va_start(args, format);
@@ -50,7 +51,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && !format[1]))
 		return (-1);
 
-	for (; *ptr; ptr++)
+	for (ptr; *ptr; ptr++)
 	{
 		if (*ptr != '%')
 		{
