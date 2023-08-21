@@ -9,7 +9,7 @@
 int print_spec_s_match(va_list arg)
 {
 	/* declare variables */
-	unsigned idx;
+	unsigned int idx;
 	int r_value;
 	char *strn;
 
