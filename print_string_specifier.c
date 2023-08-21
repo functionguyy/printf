@@ -10,14 +10,14 @@ int print_spec_c_match(va_list arg)
 {
 	/* declare variables */
 	char c;
-	unsigned int writeCount;
+	unsigned int r_value;
 
 	/* initialize variables */
 	c = va_arg(arg, int);
-	writeCount = 0;
+	r_value = 0;
 
 	/* print the character specified for the specifier */
-	writeCount = _putchar(c)
+	r_value = _putchar(c)
 
-	return (writeCount);
+	return (r_value);
 }
