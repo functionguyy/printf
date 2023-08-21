@@ -1,48 +1,75 @@
 #include "main.h"
-
-int print_spec_d_match(va_list i)
+/**
+ * print_number - function that prints a positive integer
+ * @digit: a positive number
+ *
+ * Return: returns the number of characters printed to standard output
+ */
+int print_number(unsigned int digit)
 {
-    int n = va_arg(i, int);
-    int count = 0, divisor = 1;
+	/* declare variables */
+	unsigned int exponent, count, num, number;
+	int r_value;
 
-    if (n == INT_MIN)
-    {
-        char min_str[] = "-2147483648";
-        for (int i = 0; min_str[i] != '\0'; i++)
-        {
-            _putchar(min_str[i]);
-            count++;
-        }
-        return count;
-    }
-    else if (n < 0)
-    {
-        _putchar('-');
-        count++;
-        n = -n;
-    }
+	/* initialize variables */
+	count = 0;
+	exponent = 1;
+	r_value = 0;
+	num = digit;
 
-    if (n == 0)
-    {
-        _putchar('0');
-        count++;
-        return count;
-    }
+	/* get the number of tens in the number */
+	while (digit > 0)
+	{
+		digit = digit / 10;
+		count++;
+	}
 
-    /* Find the divisor that gives the first digit of n */
-    while (n / divisor >= 10)
-    {
-        divisor *= 10;
-    }
+	/* calculate its exponent */
+	while (count > 1)
+	{
+		exponent = exponent * 10;
+		count--;
+	}
 
-    /* Print each digit of n */
-    while (divisor != 0)
-    {
-        _putchar('0' + (n / divisor));
-        count++;
-        n %= divisor;
-        divisor /= 10;
-    }
+	/* print the integer */
+	while (exponent > 0)
+	{
+		number = num / exponent;
+		r_value += _putchar(number + '0');
+		num = num - (number * exponent);
+		exponent /= 10;
+	}
 
-    return count;
+	return (r_value);
+}
+/**
+ * print_spec_d_match - function prints the variadic argument specified for the
+ * format specifier d
+ * @arg: variadic argument
+ *
+ * Return: returns the number of characters printed to stardard output
+ */
+int print_spec_d_match(va_list arg)
+{
+	/* declare variable */
+	int n, r_value;
+	unsigned int num;
+
+	/* initialize variables */
+	n = va_arg(arg, int);
+	r_value = 0;
+
+	/* account for negative number */
+	if (n < 0)
+	{
+		num = n * -1;
+		r_value += _putchar('-');
+	}
+	else
+		num = n;
+
+	/* print the integer */
+	r_value += print_number(num);
+
+	return (r_value);
 }
