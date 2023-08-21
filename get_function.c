@@ -10,8 +10,7 @@
  */
 int (*find_format_handlers(const char *format))(va_list arg)
 {
-	format_handler find_func[] = 
-	{
+	format_handler find_func[] = {
 		{"c", print_spec_c_match},
 		{"d", print_spec_d_match},
 		{"i", print_spec_d_match},
@@ -21,6 +20,7 @@ int (*find_format_handlers(const char *format))(va_list arg)
 	};
 
 	unsigned int i;
+
 	i = 0;
 
 	while (find_func[i].format_char)
