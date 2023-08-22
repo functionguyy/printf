@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * convert - a given decimal number to a string rep in the specified base.
+ * convert_to - a given decimal number to a string rep in the specified base.
  *
  * Description - This function takes a decimal number and a base, and converts
  *	the number into a string representation using the provided base.
