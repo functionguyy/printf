@@ -18,6 +18,14 @@ int print_spec_b_match(va_list arg)
 	r_value = 0;
 	base = 2;
 
+	if (n == 0)
+	{
+		r_value += _putchar('0');
+		return (r_value);
+	}
+	if (n < 1)
+		return (r_value);
+
 
 	/* print the integer */
 	r_value += print_number(n, base);
