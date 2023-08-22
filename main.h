@@ -43,7 +43,11 @@ typedef struct format_handler
 	int (*handler_func)(va_list);
 
 } format_handler;
-
+/**
+ * struct conversion_table - data structure for storing hex conversion notation
+ * @numConst: integer
+ * @numStr: associated hex notation
+ */
 typedef struct conversion_table
 {
 	unsigned int numConst;
