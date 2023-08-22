@@ -20,10 +20,12 @@ int print_spec_d_match(va_list arg);
 int print_spec_s_match(va_list arg);
 int print_percent(va_list arg);
 int print_spec_S_match(va_list arg);
+int print_spec_b_match(va_list arg);
 
 
 /* Helper functions 1*/
 char *convert_to(long int num, int base);
+int print_number(unsigned int digit, unsigned int base);
 
 
 int _printf(const char *format, ...);
@@ -41,5 +43,11 @@ typedef struct format_handler
 	int (*handler_func)(va_list);
 
 } format_handler;
+
+typedef struct conversion_table
+{
+	unsigned int numConst;
+	char *numStr;
+} c_t;
 
 #endif /* MAIN_H */
