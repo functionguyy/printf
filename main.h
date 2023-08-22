@@ -19,10 +19,13 @@ int print_spec_c_match(va_list arg);
 int print_spec_d_match(va_list arg);
 int print_spec_s_match(va_list arg);
 int print_percent(va_list arg);
+int print_spec_S_match(va_list arg);
 
-/* libraries 1*/
-int execute_func(char *s, va_list arg);
-int produce_range(char *start, char *stop);
+
+/* Helper functions 1*/
+char *convert(long int num, int base);
+
+
 int _printf(const char *format, ...);
 
 
