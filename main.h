@@ -23,7 +23,7 @@ int print_spec_S_match(va_list arg);
 
 
 /* Helper functions 1*/
-char *convert(long int num, int base);
+char *convert_to(long int num, int base);
 
 
 int _printf(const char *format, ...);

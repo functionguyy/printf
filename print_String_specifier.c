@@ -12,7 +12,7 @@
  * @base: The base for conversion (e.g., 2 for binary, 16 for hexadecimal).
  * Return: A pointer to the string representation of the converted number.
  */
-char *convert(long int num, int base)
+char *convert_to(long int num, int base)
 {
 	char *arr;
 	char buf[20];
@@ -81,7 +81,7 @@ int print_spec_S_match(va_list arg)
 		{
 			r_value += _putchar('\\');
 			r_value += _putchar('x');
-			hex_format = convert(*str, 16);
+			hex_format = convert_to(*str, 16);
 			if (!hex_format[1])
 				r_value += _putchar('0');
 			r_value += _puts(hex_format);
