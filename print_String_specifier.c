@@ -14,8 +14,8 @@
  */
 char *convert(long int num, int base)
 {
-	static char *arr;
-	static char buf[20];
+	char *arr;
+	char buf[20];
 	char *ptr;
 	unsigned long n = num;
 
