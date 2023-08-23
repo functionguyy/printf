@@ -19,6 +19,7 @@ int (*find_format_handlers(const char *format))(va_list arg)
 		{"S", print_spec_S_match},
 		{"b", print_spec_b_match},
 		{"o", print_spec_o_match},
+		{"u", print_spec_u_match},
 		{NULL, NULL}
 	};
 
