@@ -21,7 +21,6 @@ int print_spec_X_match(va_list arg)
 	hex_case = "X";
 
 
-
 	if (n == 0)
 	{
 		r_value += _putchar('0');
