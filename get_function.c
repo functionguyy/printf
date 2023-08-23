@@ -18,6 +18,7 @@ int (*find_format_handlers(const char *format))(va_list arg)
 		{"%", print_percent},
 		{"S", print_spec_S_match},
 		{"b", print_spec_b_match},
+		{"u", print_spec_u_match},
 		{NULL, NULL}
 	};
 
