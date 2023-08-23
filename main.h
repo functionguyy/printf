@@ -26,7 +26,7 @@ int print_spec_X_match(va_list arg);
 
 /* Helper functions 1*/
 char *convert_to(long int num, int base);
-int print_number(unsigned int digit, unsigned int base);
+int print_number(unsigned int digit, unsigned int base, char *hex_base);
 
 
 int _printf(const char *format, ...);
