@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * convert_to_hex - converts a positive integer to its hexadecimal
+ * convert_to_heX - converts a positive integer to its hexadecimal
  * representation in uppercase alphabetic letter
  * @number: positive integer
  *
  * Return: returns the ascii value for the uppercase letter of the hex notation
  */
-int convert_to_hex(unsigned int number)
+int convert_to_heX(unsigned int number)
 {
 	/* declare variables */
 	c_t conversion_table[] = {
@@ -36,23 +36,71 @@ int convert_to_hex(unsigned int number)
 	return (asciiVal);
 }
 /**
+ * convert_to_hex - converts a positive integer to its hexadecimal
+ * representation in lowercase alphabetic letter
+ * @number: positve integer
+ *
+ * Return: returns the ascii value for the lowercase letter of the hex notation
+ */
+int convert_to_hex(unsigned int number)
+{
+	/* declare variables */
+	c_t conversion_table[] = {
+		{10, "a"},
+		{11, "b"},
+		{12, "c"},
+		{13, "d"},
+		{14, "e"},
+		{15, "f"}
+	};
+	int i, asciiVal;
+	char *s, lowercaseChar;
+
+	/* initialize variables */
+	i = 0;
+
+	/* seek the hexadecimal notation */
+	while (conversion_table[i].numConst != number)
+		i++;
+
+	s = conversion_table[i].numStr;
+	lowercaseChar = *s;
+
+	/* convert to ascii */
+	asciiVal = (int)lowercaseChar;
+
+	return (asciiVal);
+}
+/**
  * print_base_16 - prints a positive integer in base 16 notation
  * @num: a positive integer
+ * @hex_case: the conversion specifier case
  *
  * Return: returns the number of characters printed to standard output
  */
-int print_base_16(unsigned int num)
+int print_base_16(unsigned int num, char *hex_case)
 {
 	/* declare variables */
-	int r_value, uppercaseAscii;
+	int r_value, uppercaseAscii, lowercaseAscii;
 
 	/* initialize variables */
 	r_value = 0;
 	uppercaseAscii = 0;
+	lowercaseAscii = 0;
+
 
 	/* print base 16 notation */
-	uppercaseAscii = convert_to_hex(num);
-	r_value += _putchar(uppercaseAscii);
+	if (*hex_case == 'X')
+	{
+		uppercaseAscii = convert_to_heX(num);
+		r_value += _putchar(uppercaseAscii);
+	}
+
+	if (*hex_case == 'x')
+	{
+		lowercaseAscii = convert_to_hex(num);
+		r_value += _putchar(lowercaseAscii);
+	}
 
 	return (r_value);
 }
@@ -60,10 +108,11 @@ int print_base_16(unsigned int num)
  * print_number - function that prints a positive integer in a base notation
  * @digit: a positive integer
  * @base: the base notation in which digit should be printed
+ * @hex_case: the conversion specifier case
  *
  * Return: returns the number of characters printed to standard output
  */
-int print_number(unsigned int digit, unsigned int base)
+int print_number(unsigned int digit, unsigned int base, char *hex_case)
 {
 	/* declare variables */
 	unsigned int exponent, count, num, number;
@@ -94,7 +143,7 @@ int print_number(unsigned int digit, unsigned int base)
 	{
 		number = num / exponent;
 		if ((number >= 10 && number < 16) && base > 10)
-			r_value += print_base_16(number);
+			r_value += print_base_16(number, hex_case);
 		else
 			r_value += _putchar(number + '0');
 

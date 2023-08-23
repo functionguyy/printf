@@ -21,13 +21,15 @@ int print_spec_s_match(va_list arg);
 int print_percent(va_list arg);
 int print_spec_S_match(va_list arg);
 int print_spec_b_match(va_list arg);
+int print_spec_X_match(va_list arg);
 int print_spec_o_match(va_list arg);
 int print_spec_u_match(va_list arg);
 
 
+
 /* Helper functions 1*/
 char *convert_to(long int num, int base);
-int print_number(unsigned int digit, unsigned int base);
+int print_number(unsigned int digit, unsigned int base, char *hex_base);
 
 
 int _printf(const char *format, ...);
