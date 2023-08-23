@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * convert_to_hex - converts a positive integer to its hexadecimal
+ * convert_to_heX - converts a positive integer to its hexadecimal
  * representation in uppercase alphabetic letter
  * @number: positive integer
  *
@@ -36,12 +36,11 @@ int convert_to_heX(unsigned int number)
 	return (asciiVal);
 }
 /**
+ * convert_to_hex - converts a positive integer to its hexadecimal
+ * representation in lowercase alphabetic letter
+ * @number: positve integer
  *
- *
- *
- *
- *
- *
+ * Return: returns the ascii value for the lowercase letter of the hex notation
  */
 int convert_to_hex(unsigned int number)
 {
@@ -75,6 +74,7 @@ int convert_to_hex(unsigned int number)
 /**
  * print_base_16 - prints a positive integer in base 16 notation
  * @num: a positive integer
+ * @hex_case: the conversion specifier case
  *
  * Return: returns the number of characters printed to standard output
  */
@@ -108,6 +108,7 @@ int print_base_16(unsigned int num, char *hex_case)
  * print_number - function that prints a positive integer in a base notation
  * @digit: a positive integer
  * @base: the base notation in which digit should be printed
+ * @hex_case: the conversion specifier case
  *
  * Return: returns the number of characters printed to standard output
  */
