@@ -27,7 +27,7 @@ int print_spec_u_match(va_list arg)
 
 
 	/* print the integer */
-	r_value += print_number(n, base);
+	r_value += print_number(n, base, NULL);
 
 
 	return (r_value);
