@@ -21,6 +21,7 @@ int print_spec_s_match(va_list arg);
 int print_percent(va_list arg);
 int print_spec_S_match(va_list arg);
 int print_spec_b_match(va_list arg);
+int print_spec_u_match(va_list arg);
 
 
 /* Helper functions 1*/
