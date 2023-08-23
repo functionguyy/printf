@@ -24,6 +24,7 @@ int print_spec_b_match(va_list arg);
 int print_spec_X_match(va_list arg);
 int print_spec_o_match(va_list arg);
 int print_spec_u_match(va_list arg);
+int print_spec_x_match(va_list arg);
 
 
 
